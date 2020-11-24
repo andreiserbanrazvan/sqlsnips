@@ -1,0 +1,78 @@
+SQL QUERRIES
+============
+
+SELECT CITY,LENGTH(CITY) FROM STATION ORDER BY LENGTH(CITY) ASC, CITY ASC LIMIT 1;
+SELECT CITY,LENGTH(CITY) FROM STATION ORDER BY LENGTH(CITY) DESC, CITY DESC LIMIT 1;
+
+========================================================================================
+
+Amo 3
+Marine On Saint Croix 21
+========================================================================================
+
+
+SELECT DISTINCT(CITY) FROM STATION WHERE LOWER(SUBSTR(CITY,1,1)) IN ('a','e','i','o','u'); 
+========================================================================================
+
+Irvington
+Aliso Viejo
+Osage City
+Andover
+Atlantic Mine
+Eureka Springs
+Onaway
+========================================================================================
+
+SELECT DISTINCT(CITY) FROM STATION WHERE LOWER(SUBSTR(CITY,LENGTH(CITY),1)) IN ('a','e','i','o','u');
+========================================================================================
+Acme 
+Aguanga 
+Alba 
+Aliso Viejo 
+Alpine 
+========================================================================================
+
+SELECT DISTINCT(CITY) FROM STATION WHERE LOWER(SUBSTR(CITY,1,1)) IN ('a','e','i','o','u') and LOWER(SUBSTR(CITY,LENGTH(CITY),1)) IN ('a','e','i','o','u');
+========================================================================================
+
+Upperco
+Aguanga
+East China
+East Irvine
+Amo
+Eleele
+
+========================================================================================
+SELECT DISTINCT(CITY) FROM STATION WHERE LOWER(SUBSTR(CITY,1,1)) NOT IN ('a','e','i','o','u');
+========================================================================================
+
+SELECT NAME FROM STUDENTS WHERE MARKS>75 ORDER BY RIGHT(NAME,3),ID ASC;
+SELECT NAME FROM STUDENTS WHERE MARKS>75 ORDER BY SUBSTRING(NAME,-3),ID ASC;
+========================================================================================
+
+SELECT DISTINCT(NAME) FROM EMPLOYEE ORDER BY NAME;
+Alan 
+Amy 
+Andrew 
+Andrew 
+Angela 
+Ann 
+Anna 
+Anthony 
+
+========================================================================================
+
+SELECT NAME FROM EMPLOYEE WHERE SALARY>2000 AND MONTHS<10 ORDER BY EMPLOYEE_ID ASC;
+SELECT * FROM CITY WHERE POPULATION>100000 AND COUNTRYCODE="USA" ;
+SELECT NAME FROM CITY WHERE POPULATION>120000 AND COUNTRYCODE="USA";
+SELECT * FROM CITY;
+SELECT * FROM CITY WHERE ID=1661;
+SELECT * FROM CITY WHERE COUNTRYCODE="JPN";
+SELECT NAME FROM CITY WHERE COUNTRYCODE='JPN';
+SELECT CITY,STATE FROM STATION ;
+SELECT DISTINCT(CITY) FROM STATION WHERE (ID%2)=0;
+SELECT COUNT(CITY) - COUNT(DISTINCT(CITY)) FROM STATION;
+SELECT CITY,LENGTH(CITY) FROM STATION ORDER BY LENGTH(CITY) ASC, CITY ASC LIMIT 1;
+SELECT CITY,LENGTH(CITY) FROM STATION ORDER BY LENGTH(CITY) DESC, CITY DESC LIMIT 1;
+
+
