@@ -1,0 +1,36 @@
+=======================================================
+SELECT COUNT(*) FROM CITY WHERE POPULATION > 100000;
+
+=======================================================
+
+SELECT SUM(POPULATION) FROM CITY WHERE DISTRICT='CALIFORNIA';
+
+
+==========================================================
+
+
+SELECT AVG(POPULATION) FROM CITY WHERE DISTRICT='CALIFORNIA';
+
+
+==========================================================
+
+SELECT ROUND(AVG(POPULATION)) FROM CITY ;
+
+=========================================================
+
+
+SELECT SUM(POPULATION) FROM CITY WHERE COUNTRYCODE='JPN'
+
+==========================================================
+
+SELECT MAX(POPULATION) - MIN(POPULATION) FROM CITY ;
+
+==========================================================
+
+SELECT CAST(CEILING((AVG(CAST(Salary AS Float)) - AVG(CAST(REPLACE(Salary, 0, '')AS Float)))) AS INT)
+FROM EMPLOYEES;
+
+=======================================================
+
+
+SELECT ROUND(SUM(LAT_N),2) AS lat , ROUND(SUM(LONG_W),2) AS lon FROM STATION;
